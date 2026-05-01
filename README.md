@@ -1,2 +1,0 @@
-# veloxwrapco.com
-Velox wrap 
