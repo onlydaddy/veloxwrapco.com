@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VELOX WRAPCO - Precision | Performance | Perfection. Premium automotive vinyl wraps, performance graphics, and protective films.">
+    <title>VELOX WRAPCO | Precision • Performance • Perfection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap');
+        
+        :root {
+            --neon-cyan: #00E5FF;
+            --neon-purple: #7A012B;
+            --neon-pink: #FF007A;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .neon-text {
+            text-shadow: 
+                0 0 10px var(--neon-cyan),
+                0 0 20px var(--neon-cyan),
+                0 0 40px var(--neon-purple);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A2E 100%);
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #00E5FF;
+            text-shadow: 0 0 15px #00E5FF;
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #00E5FF, #FF007A);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgb(0 229 255 / 0.2);
+        }
+        
+        .glow-button {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glow-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 40%;
+            height: 300%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255,255,255,0.4),
+                transparent
+            );
+            transform: skewX(-25deg);
+            animation: shimmer 4s infinite linear;
+        }
+        
+        @keyframes shimmer {
+            100% { transform: translateX(300%); }
+        }
+    </style>
+</head>
+<body class="bg-[#0A0A0A] text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="bg-black/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-[#00E5FF] via-[#7A012B] to-[#FF007A] rounded-xl flex items-center justify-center text-xl font-black tracking-tighter neon-text">
+                    V
+                </div>
+                <div>
+                    <h1 class="text-3xl font-black tracking-[-2px] neon-text" style="color: #00E5FF;">VELOX</h1>
+                    <p class="text-xs tracking-[2px] -mt-1 text-[#FF007A] font-medium">WRAPCO</p>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-widest">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#consultation" class="nav-link">Book Now</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- Social icons in nav -->
+                <a href="#" class="w-9 h-9 flex items-center justify-center text-xl hover:text-[#00E5FF] transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-9 h-9 flex items-center justify-center text-xl hover:text-[#00E5FF] transition-colors"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="w-9 h-9 flex items-center justify-center text-xl hover:text-[#00E5FF] transition-colors"><i class="fab fa-facebook"></i></a>
+                
+                <button onclick="document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' })"
+                        class="glow-button px-8 py-3.5 bg-gradient-to-r from-[#00E5FF] to-[#FF007A] text-black font-bold uppercase text-sm tracking-widest rounded-2xl hover:scale-105 transition-all">
+                    GET A QUOTE
+                </button>
+                
+                <!-- Mobile menu button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-black/95 px-8 py-6 border-t border-white/10">
+            <div class="flex flex-col gap-6 text-center text-lg font-semibold">
+                <a href="#services" onclick="toggleMobileMenu()" class="nav-link">Services</a>
+                <a href="#portfolio" onclick="toggleMobileMenu()" class="nav-link">Portfolio</a>
+                <a href="#pricing" onclick="toggleMobileMenu()" class="nav-link">Pricing</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="nav-link">About Us</a>
+                <a href="#consultation" onclick="toggleMobileMenu()" class="nav-link">Book Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg min-h-screen flex items-center relative">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-2 rounded-3xl text-sm font-medium border border-white/20">
+                    <div class="w-3 h-3 bg-[#00E5FF] rounded-full animate-pulse"></div>
+                    PRECISION • PERFORMANCE • PERFECTION
+                </div>
+                
+                <h1 class="text-7xl md:text-8xl font-black leading-none tracking-[-4px] neon-text" style="color: #00E5FF;">
+                    VELOX<br>WRAPCO
+                </h1>
+                
+                <p class="text-2xl md:text-3xl font-light text-white/90 max-w-lg">
+                    Premium vehicle wraps. Race-ready graphics.<br>
+                    Unmatched protection.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' })"
+                            class="glow-button px-10 py-6 bg-white text-black font-black text-xl rounded-3xl hover:bg-[#00E5FF] transition-all flex items-center gap-3">
+                        <i class="fas fa-rocket"></i>
+                        BOOK CONSULTATION
+                    </button>
+                    
+                    <a href="#portfolio" 
+                       class="px-10 py-6 border-2 border-white/70 hover:border-[#FF007A] font-semibold text-xl rounded-3xl flex items-center gap-3 transition-all">
+                        SEE OUR WORK
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Trust signals -->
+                <div class="flex items-center gap-8 pt-8">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-[#00E5FF] text-3xl"></i>
+                        <div>
+                            <p class="font-semibold">1000+</p>
+                            <p class="text-xs text-white/70">Vehicles Wrapped</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-trophy text-[#FF007A] text-3xl"></i>
+                        <div>
+                            <p class="font-semibold">5-Star</p>
+                            <p class="text-xs text-white/70">Track &amp; Street</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-shield-alt text-[#7A012B] text-3xl"></i>
+                        <div>
+                            <p class="font-semibold">Lifetime</p>
+                            <p class="text-xs text-white/70">Warranty</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero visual -->
+            <div class="relative hidden md:flex justify-end">
+                <div class="relative w-full max-w-[520px]">
+                    <div class="absolute -inset-8 bg-gradient-to-br from-[#00E5FF]/20 via-[#FF007A]/20 to-transparent blur-3xl rounded-[4rem] -z-10"></div>
+                    <!-- Placeholder for hero car image - replace src with your actual image -->
+                    <img src="https://picsum.photos/id/1015/800/600" alt="VELOX wrapped supercar" 
+                         class="w-full rounded-3xl shadow-2xl border border-white/10 object-cover">
+                    <div class="absolute -bottom-6 -right-6 bg-black/90 backdrop-blur-xl px-8 py-4 rounded-3xl border border-[#00E5FF]/30 flex items-center gap-4 text-sm">
+                        <div class="text-[#00E5FF]"><i class="fas fa-car-side text-4xl"></i></div>
+                        <div>
+                            <p class="font-bold">Full Vinyl Wrap</p>
+                            <p class="text-white/70">Lamborghini + Porsche Edition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center gap-2 text-xs tracking-widest opacity-60">
+            <i class="fas fa-chevron-down animate-bounce text-3xl"></i>
+            SCROLL FOR MORE
+        </div>
+    </header>
+
+    <!-- BIO / ABOUT SECTION -->
+    <section id="about" class="py-24 bg-black">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <h2 class="text-5xl font-bold mb-6 section-header">Who is VELOX WRAPCO?</h2>
+                    <p class="text-xl leading-relaxed text-white/80">
+                        Born from a passion for speed and precision, VELOX WRAPCO specializes in transforming ordinary vehicles into extraordinary works of art. 
+                        We combine cutting-edge materials with motorsport-inspired design to deliver wraps that protect, perform, and turn heads.
+                    </p>
+                    <p class="text-xl leading-relaxed text-white/80 mt-8">
+                        Whether you're chasing lap records or simply want your daily driver to stand out, our team of certified installers and graphic designers are obsessed with getting every detail perfect.
+                    </p>
+                    
+                    <div class="flex gap-6 mt-12">
+                        <button onclick="document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' })"
+                                class="px-8 py-4 bg-[#00E5FF] hover:bg-white text-black font-bold rounded-2xl flex items-center gap-3">
+                            MEET THE TEAM
+                            <i class="fas fa-users"></i>
+                        </button>
+                        <a href="#" class="flex items-center gap-3 text-white/70 hover:text-[#FF007A]">
+                            <span class="text-sm font-medium">WATCH OUR STORY</span>
+                            <i class="fas fa-play-circle text-4xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 grid grid-cols-3 gap-6">
+                    <div class="bg-white/5 rounded-3xl p-8 text-center card-hover">
+                        <i class="fas fa-car-side text-6xl text-[#00E5FF] mb-6"></i>
+                        <h4 class="text-2xl font-bold">10,000+</h4>
+                        <p class="text-white/60">Square feet wrapped monthly</p>
+                    </div>
+                    <div class="bg-white/5 rounded-3xl p-8 text-center card-hover">
+                        <i class="fas fa-tachometer-alt text-6xl text-[#FF007A] mb-6"></i>
+                        <h4 class="text-2xl font-bold">Track Tested</h4>
+                        <p class="text-white/60">Materials used by pro racers</p>
+                    </div>
+                    <div class="bg-white/5 rounded-3xl p-8 text-center card-hover">
+                        <i class="fas fa-medal text-6xl text-[#7A012B] mb-6"></i>
+                        <h4 class="text-2xl font-bold">Certified</h4>
+                        <p class="text-white/60">3M • Avery • XPEL Installers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 bg-[#111113]">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold section-header mx-auto">Our Services</h2>
+                <p class="text-white/60 mt-4 text-xl">From full color changes to track-ready graphics and protective films</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-black/70 border border-white/10 rounded-3xl p-8 card-hover">
+                    <div class="h-14 w-14 bg-gradient-to-br from-[#00E5FF] to-[#FF007A] rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-paint-roller text-3xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-3">Full Vehicle Wraps</h3>
+                    <p class="text-white/70">Premium 3M, Avery, and XPEL vinyl wraps. Color change, matte, gloss, or satin finishes.</p>
+                    <button onclick="document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' })"
+                            class="mt-8 w-full py-4 text-sm font-bold bg-white/10 hover:bg-[#00E5FF] hover:text-black rounded-2xl">GET STARTED →</button>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-black/70 border border-white/10 rounded-3xl p-8 card-hover">
+                    <div class="h-14 w-14 bg-gradient-to-br from-[#FF007A] to-[#7A012B] rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-bolt text-3xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-3">Performance Graphics</h3>
+                    <p class="text-white/70">Custom racing stripes, sponsor decals, roof graphics, hood accents &amp; more.</p>
+                    <button onclick="document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' })"
+                            class="mt-8 w-full py-4 text-sm font-bold bg-white/10 hover:bg-[#00E5FF] hover:text-black rounded-2xl">DESIGN YOURS →</button>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-black/70 border border-white/10 rounded-3xl p-8 card-hover">
+                    <div class="h-14 w-14 bg-gradient-to-br from-[#7A012B] to-[#00E5FF] rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-shield-halved text-3xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-3">Paint Protection Film (PPF)</h3>
+                    <p class="text-white/70">Invisible armor for your paint. Self-healing XPEL ULTIMATE PLUS protection.</p>
+                    <button onclick="document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' })"
+                            class="mt-8 w-full py-4 text-sm font-bold bg-white/10 hover:bg-[#00E5FF] hover:text-black rounded-2xl">PROTECT NOW →</button>
+                </div>
+            </div>
+            
+            <!-- Services inquiry form -->
+            <div class="mt-16 max-w-2xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-10">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Need a custom service?</h3>
+                <form class="grid md:grid-cols-2 gap-6" onsubmit="handleFormSubmit(event)">
+                    <input type="text" placeholder="Your Name" class="bg-transparent border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#00E5FF]">
+                    <input type="email" placeholder="Email Address" class="bg-transparent border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#00E5FF]">
+                    <input type="tel" placeholder="Phone" class="bg-transparent border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#00E5FF]">
+                    <select class="bg-transparent border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#00E5FF]">
+                        <option>Full Wrap</option>
+                        <option>Graphics Only</option>
+                        <option>PPF / Ceramic</option>
+                        <option>Custom Design</option>
+                    </select>
+                    <textarea placeholder="Tell us about your vehicle &amp; vision..." rows="3"
+                              class="md:col-span-2 bg-transparent border border-white/30 rounded-3xl px-6 py-4 focus:outline-none focus:border-[#00E5FF]"></textarea>
+                    <button type="submit" 
+                            class="md:col-span-2 glow-button py-6 bg-gradient-to-r from-[#00E5FF] to-[#FF007A] text-black font-bold text-xl rounded-3xl">SEND REQUEST</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTALLATION PICTURES / PORTFOLIO -->
+    <section id="portfolio" class="py-24 bg-black">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-5xl font-bold section-header">Recent Installations</h2>
+                    <p class="text-white/70 mt-3">Real cars. Real transformations.</p>
+                </div>
+                <a href="#" class="flex items-center gap-3 text-[#00E5FF] font-medium hover:text-white">
+                    VIEW FULL GALLERY 
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Replace these placeholder images with your real installation photos -->
+                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
+                    <img src="https://picsum.photos/id/1015/600/400" alt="Installation 1" class="w-full h-full object-cover hover:scale-110 transition-transform">
+                </div>
+                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
+                    <img src="https://picsum.photos/id/160/600/400" alt="Installation 2" class="w-full h-full object-cover hover:scale-110 transition-transform">
+                </div>
+                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
+                    <img src="https://picsum.photos/id/201/600/400" alt="Installation 3" class="w-full h-full object-cover hover:scale-110 transition-transform">
+                </div>
+                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
+                    <img src="https://picsum.photos/id/251/600/400" alt="Installation 4" class="w-full h-full object-cover hover:scale-110 transition-transform">
+                </div>
+                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
+                    <img src="https://picsum.photos/id/29/600/400" alt="Installation 5" class="w-full h-full object-cover hover:scale-110 transition-transform">
+                </div>
+                <div class="aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
+                    <img src="https://picsum.photos/id/30/600/400" alt="Installation 6" class="w-full h-full object-cover hover:scale-110 transition-transform">
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button onclick="document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' })"
+                        class="px-12 py-5 border-2 border-[#FF007A] text-white font-bold rounded-3xl hover:bg-[#FF007A] hover:text-black">
+                    SHARE YOUR BUILD WITH US →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING DIAGRAM -->
+    <section id="pricing" class="py-24 bg-[#111113]">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold section-header mx-auto">Transparent Pricing</h2>
+                <p class="text-white/70">Starting prices for popular vehicles • Custom quotes available</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Tier 1 -->
+                <div class="bg-gradient-to-b from-white/5 to-transparent border border-white/10 rounded-3xl p-8 text-center card-hover">
+                    <h4 class="uppercase text-sm tracking-widest mb-2">Compact / Sedan</h4>
+                    <div class="text-6xl font-black mb-1">$2,800</div>
+                    <p class="text-white/60 mb-8">Full wrap • Most sedans &amp; coupes</p>
+                    <ul class="text-left space-y-4 mb-12">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> Premium vinyl</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> 3-year warranty</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> Professional install</li>
+                    </ul>
+                    <button onclick="document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' })"
+                            class="w-full py-6 rounded-2xl border-2 border-white/70 font-bold">GET THIS PACKAGE</button>
+                </div>
+                
+                <!-- Tier 2 (Most Popular) -->
+                <div class="bg-gradient-to-b from-[#00E5FF]/10 to-transparent border-2 border-[#00E5FF] rounded-3xl p-8 text-center relative card-hover scale-105">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#00E5FF] text-black text-xs font-bold px-6 py-1 rounded-3xl">MOST POPULAR</div>
+                    <h4 class="uppercase text-sm tracking-widest mb-2 text-[#00E5FF]">Sports Car / SUV</h4>
+                    <div class="text-6xl font-black mb-1">$4,200</div>
+                    <p class="text-white/60 mb-8">Full wrap • Porsche, Lambo, etc.</p>
+                    <ul class="text-left space-y-4 mb-12">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> 3M 2080 series</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> 5-year warranty</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> Color-matched accents</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> Free design mockup</li>
+                    </ul>
+                    <button onclick="document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' })"
+                            class="w-full py-6 bg-[#00E5FF] hover:bg-white text-black font-bold rounded-2xl">BOOK THIS PACKAGE</button>
+                </div>
+                
+                <!-- Tier 3 -->
+                <div class="bg-gradient-to-b from-white/5 to-transparent border border-white/10 rounded-3xl p-8 text-center card-hover">
+                    <h4 class="uppercase text-sm tracking-widest mb-2">Full Track / Exotic</h4>
+                    <div class="text-6xl font-black mb-1">$6,500+</div>
+                    <p class="text-white/60 mb-8">Custom + PPF combo packages</p>
+                    <ul class="text-left space-y-4 mb-12">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> XPEL PPF + Wrap</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> Lifetime warranty</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> Custom graphics</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> Priority scheduling</li>
+                    </ul>
+                    <button onclick="document.getElementById('consultation').scrollIntoView({ behavior: 'smooth' })"
+                            class="w-full py-6 rounded-2xl border-2 border-white/70 font-bold">CUSTOM QUOTE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOK CONSULTATION -->
+    <section id="consultation" class="py-24 bg-gradient-to-br from-black to-[#111113]">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <h2 class="text-5xl font-bold mb-4">Book Your Free Consultation</h2>
+                <p class="text-white/70">Tell us about your vehicle and vision. Our team will get back to you within 24 hours.</p>
+            </div>
+            
+            <form id="consultationForm" class="max-w-xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-10 grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="handleFormSubmit(event)">
+                <input type="text" placeholder="First &amp; Last Name" required class="bg-transparent border border-white/30 focus:border-[#00E5FF] rounded-2xl px-6 py-5">
+                <input type="email" placeholder="Email" required class="bg-transparent border border-white/30 focus:border-[#00E5FF] rounded-2xl px-6 py-5">
+                <input type="tel" placeholder="Phone Number" class="bg-transparent border border-white/30 focus:border-[#00E5FF] rounded-2xl px-6 py-5">
+                <input type="text" placeholder="Vehicle Year / Make / Model" required class="bg-transparent border border-white/30 focus:border-[#00E5FF] rounded-2xl px-6 py-5">
+                <textarea placeholder="What are you looking for? (Wrap color, graphics, PPF, etc.)" rows="4" class="md:col-span-2 bg-transparent border border-white/30 focus:border-[#00E5FF] rounded-3xl px-6 py-5"></textarea>
+                
+                <button type="submit" 
+                        class="md:col-span-2 glow-button py-7 bg-gradient-to-r from-[#00E5FF] via-[#FF007A] to-[#7A012B] text-black font-black text-2xl rounded-3xl flex items-center justify-center gap-4">
+                    <span>RESERVE MY SPOT</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTACT US -->
+    <section class="py-24 bg-black">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-5xl font-bold mb-6">Let's Build Something Legendary</h2>
+                <p class="text-xl text-white/70">Raleigh, North Carolina • Available for travel</p>
+                
+                <div class="mt-12 space-y-8">
+                    <div class="flex gap-6">
+                        <i class="fas fa-phone text-4xl text-[#00E5FF]"></i>
+                        <div>
+                            <p class="font-medium">(919) 555-0123</p>
+                            <p class="text-white/60 text-sm">Call or text us anytime</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <i class="fas fa-envelope text-4xl text-[#FF007A]"></i>
+                        <div>
+                            <p class="font-medium">hello@veloxwrapco.com</p>
+                            <p class="text-white/60 text-sm">We reply within hours</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <i class="fas fa-map-marker-alt text-4xl text-[#7A012B]"></i>
+                        <div>
+                            <p class="font-medium">123 Speed Lane, Raleigh, NC</p>
+                            <p class="text-white/60 text-sm">By appointment only</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More socials -->
+                <div class="mt-16">
+                    <p class="uppercase text-xs tracking-widest mb-6">Follow the speed</p>
+                    <div class="flex gap-8 text-4xl">
+                        <a href="#" class="hover:text-[#00E5FF] transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-[#00E5FF] transition-colors"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="hover:text-[#00E5FF] transition-colors"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="hover:text-[#00E5FF] transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-[#00E5FF] transition-colors"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick contact form -->
+            <div class="bg-white/5 p-10 rounded-3xl">
+                <h3 class="text-3xl font-semibold mb-8">Quick Message</h3>
+                <form onsubmit="handleFormSubmit(event)">
+                    <div class="space-y-6">
+                        <input type="text" placeholder="Name" class="w-full bg-transparent border border-white/30 rounded-2xl px-6 py-5">
+                        <input type="email" placeholder="Email" class="w-full bg-transparent border border-white/30 rounded-2xl px-6 py-5">
+                        <textarea rows="5" placeholder="How can we help you today?" class="w-full bg-transparent border border-white/30 rounded-3xl px-6 py-5"></textarea>
+                        <button type="submit" class="w-full py-6 bg-white text-black font-bold text-lg rounded-3xl">SEND MESSAGE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-white/10 py-16">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-12 gap-y-12">
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 bg-gradient-to-br from-[#00E5FF] to-[#FF007A] rounded-2xl flex items-center justify-center font-black">V</div>
+                    <h1 class="text-3xl font-black neon-text">VELOX WRAPCO</h1>
+                </div>
+                <p class="text-white/60">Precision. Performance. Perfection.</p>
+                <p class="text-xs text-white/40 mt-8">© 2026 VELOX WRAPCO. All Rights Reserved.</p>
+            </div>
+            
+            <div class="md:col-span-2">
+                <p class="font-semibold mb-4">Company</p>
+                <div class="space-y-3 text-sm">
+                    <a href="#about" class="block text-white/70 hover:text-white">About Us</a>
+                    <a href="#" class="block text-white/70 hover:text-white">Our Process</a>
+                    <a href="#" class="block text-white/70 hover:text-white">Warranty</a>
+                    <a href="#" class="block text-white/70 hover:text-white">Careers</a>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2">
+                <p class="font-semibold mb-4">Services</p>
+                <div class="space-y-3 text-sm">
+                    <a href="#services" class="block text-white/70 hover:text-white">Full Wraps</a>
+                    <a href="#services" class="block text-white/70 hover:text-white">Graphics</a>
+                    <a href="#services" class="block text-white/70 hover:text-white">PPF &amp; Ceramic</a>
+                    <a href="#" class="block text-white/70 hover:text-white">Fleet Wraps</a>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2">
+                <p class="font-semibold mb-4">Connect</p>
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="flex items-center gap-3"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#" class="flex items-center gap-3"><i class="fab fa-tiktok"></i> TikTok</a>
+                    <a href="#" class="flex items-center gap-3"><i class="fab fa-youtube"></i> YouTube</a>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2 text-right">
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                        class="flex items-center gap-2 ml-auto text-sm font-medium">
+                    BACK TO TOP 
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu')
+            menu.classList.toggle('hidden')
+        }
+        
+        // Fake form submission
+        function handleFormSubmit(e) {
+            e.preventDefault()
+            const btns = document.querySelectorAll('button[type="submit"]')
+            btns.forEach(btn => {
+                const original = btn.innerHTML
+                btn.innerHTML = `<i class="fas fa-spinner animate-spin"></i> SENDING...`
+                btn.disabled = true
+            })
+            
+            setTimeout(() => {
+                alert("✅ Thank you! Your request has been received.\n\nA VELOX WRAPCO specialist will contact you shortly.")
+                window.location.reload()
+            }, 1800)
+        }
+        
+        // Console message
+        console.log('%c🚀 VELOX WRAPCO Homepage Loaded Successfully!', 'color:#00E5FF; font-size:18px; font-weight:900;')
+        
+        // Simple scroll progress indicator for fun
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                document.querySelector('nav').classList.add('shadow-2xl', 'shadow-[#00E5FF]/20')
+            }
+        })
+    </script>
+</body>
+</html>
